@@ -3,18 +3,22 @@
   "version": "1.0.0",
   "description": "An excellent example of how should look js dev environment",
   "scripts": {
-    "prestart":"babel-node buildScripts/startMessage.js",
-    "start":"npm-run-all --parallel security-check open:src ",
-    "open:src":"babel-node buildScripts/srcServer.js",
-    "security-check":"nsp check",
-    "localtunnel":"lt --port 3000",
-    "share":"npm-run-all --parallel open:src localtunnel",
-    "":"",
-    "":"",
-    "":""
+    "prestart": "babel-node buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check open:src lint:watch",
+    "open:src": "babel-node buildScripts/srcServer.js",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "security-check": "nsp check",
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel",
+    "lint:watch": "npm run lint -- --watch",
+    "": ""
   },
   "author": "maximsan",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maximsan/DevEnv.git"
+  },
   "dependencies": {
     "whatwg-fetch": "1.0.0"
   },

@@ -1,0 +1,24 @@
+{
+    //root directory for safety
+    "root": true,
+    //
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    //version of js we are using
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    //environents settings
+    "env": {
+      "browser": true,
+      "node": true,
+      "mocha": true
+    },
+    "rules": {
+        "no-console":1
+    }
+  }
