@@ -1,6 +1,8 @@
 import 'whatwg-fetch';
 import getBaseUrl from './baseUrl';
 
+const baseUrl = getBaseUrl();
+
 export function getUsers(){
     return get('users');
 }
@@ -20,7 +22,7 @@ function del(url) {
     });
   
     return fetch(request).then(onSuccess, onError);
-  }
+}
 
 function onSuccess(response){
     return response.json();
