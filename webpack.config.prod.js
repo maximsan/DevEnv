@@ -1,5 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   //debuging info
@@ -18,6 +19,13 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true
+    });
+
+    //Eliminate duplicates packages when generating bundle
+    new webpack.optimize.DedupePlugin(),
     //Minfy js
     new webpack.optimize.UglifyJsPlugin()
   ],
