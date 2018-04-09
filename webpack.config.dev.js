@@ -1,6 +1,7 @@
 import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
+
 export default {
   //debuging info
   debug: true,
@@ -18,6 +19,7 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    
         //Create html file that includes reference to bundled JS
         new HtmlWebpackPlugin({
           template: 'src/index.html',

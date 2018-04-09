@@ -9,9 +9,14 @@ export default {
   devtool: 'source-map',
   //webpack will display 
   noInfo: false,
-  entry: [
-    path.resolve(__dirname, 'src/index')
-  ],
+  //settings for bundle splitting
+  // entry: [
+  //   path.resolve(__dirname, 'src/index')
+  // ],
+    entry: {
+      vendor: path.resolve(__dirname, 'src/vendor'),
+      main: path.resolve(__dirname, 'src/index')
+  },
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
